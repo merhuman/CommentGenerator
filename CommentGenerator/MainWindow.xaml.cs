@@ -39,10 +39,25 @@ namespace CommentGenerator
 
         private void Btn_Preview_Click(object sender, RoutedEventArgs e)
         {
+            string _outString = string.Empty;
+            const int MAX_RANGE_OF_ROW = 50;
+
             if(!string.IsNullOrEmpty(Tb_InputBox.Text))
             {
-                Tb_OutputBox.Text = Tb_InputBox.Text;
+                string _textClone = Tb_InputBox.Text;
+                
+                // Careful with this split, it depends on the order of \r and \n chars.
+                List<string> _stringList = _textClone.Split(new [] { "\r\n" }, StringSplitOptions.None).ToList();
+
+                _outString = "+" + string.Join(string.Empty, Enumerable.Repeat("-", MAX_RANGE_OF_ROW - 2)) + "+\n";
+                _outString += string.Join("\n", _stringList.Select(str => "|"
+                + str
+                + string.Join(string.Empty, Enumerable.Repeat(" ", MAX_RANGE_OF_ROW - str.Length - 2))
+                + "|")) + "\n";
+                _outString += "+" + string.Join(string.Empty, Enumerable.Repeat("-", MAX_RANGE_OF_ROW - 2)) + "+\n";
             }
+
+            Tb_OutputBox.Text = _outString;
         }
 
         private void Btn_Copy_Click(object sender, RoutedEventArgs e)
