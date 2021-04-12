@@ -27,7 +27,27 @@ namespace CommentGenerator
 
         private void Btn_Clear_Button_Click(object sender, RoutedEventArgs e)
         {
+            if(!string.IsNullOrEmpty(Tb_InputBox.Text))
+            {
+                Tb_InputBox.Clear();
+            }
+            if(!string.IsNullOrEmpty(Tb_OutputBox.Text))
+            {
+                Tb_OutputBox.Clear();
+            }
+        }
 
+        private void Btn_Preview_Click(object sender, RoutedEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(Tb_InputBox.Text))
+            {
+                Tb_OutputBox.Text = Tb_InputBox.Text;
+            }
+        }
+
+        private void Btn_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(Tb_OutputBox.Text);
         }
     }
 }
