@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjectLibs;
+
 
 namespace CommentGenerator
 {
@@ -45,18 +47,9 @@ namespace CommentGenerator
             if(!string.IsNullOrEmpty(Tb_InputBox.Text))
             {
                 string _textClone = Tb_InputBox.Text;
-                
-                // Careful with this split, it depends on the order of \r and \n chars.
-                List<string> _stringList = _textClone.Split(new [] { "\r\n" }, StringSplitOptions.None).ToList();
-
-                _outString = "+" + string.Join(string.Empty, Enumerable.Repeat("-", MAX_RANGE_OF_ROW - 2)) + "+\n";
-                _outString += string.Join("\n", _stringList.Select(str => "|"
-                + str
-                + string.Join(string.Empty, Enumerable.Repeat(" ", MAX_RANGE_OF_ROW - str.Length - 2))
-                + "|")) + "\n";
-                _outString += "+" + string.Join(string.Empty, Enumerable.Repeat("-", MAX_RANGE_OF_ROW - 2)) + "+\n";
+                Generator.CommentType _type = (Generator.CommentType) Enum.Parse(typeof(Generator.CommentType), Cb_Type.Text);
+                _outString = ProjectLibs.Generator.GenComment(_textClone, MAX_RANGE_OF_ROW, _type);
             }
-
             Tb_OutputBox.Text = _outString;
         }
 
