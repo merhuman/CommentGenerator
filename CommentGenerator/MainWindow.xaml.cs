@@ -57,5 +57,18 @@ namespace CommentGenerator
         {
             Clipboard.SetText(Tb_OutputBox.Text);
         }
+
+        private void Btn_Test_Click(object sender, RoutedEventArgs e)
+        {
+            string upperA = @" ________     
+|\   __  \    
+\ \  \|\  \   
+ \ \   __  \  
+  \ \  \ \  \ 
+   \ \__\ \__\
+    \|__|\|__|";
+
+            Console.WriteLine(upperA);
+        }
     }
 }

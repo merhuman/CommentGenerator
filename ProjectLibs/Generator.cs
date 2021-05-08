@@ -7,7 +7,7 @@ namespace ProjectLibs
 {
     public static class Generator
     {
-        public enum CommentType { Type1  }
+        public enum CommentType { Type1, _3D_ASCII  }
 
         /// <summary>
         /// Generating Comment Method
