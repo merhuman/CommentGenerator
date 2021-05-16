@@ -13,8 +13,119 @@ namespace ProjectLibs
     public class Type_3D_ASCII : CommentType
     {
         #region CommentChars
-        string squareBracketLeft = "";
-        string squareBracketRight = "";
+        string exclamationMark = @" _ 
+| |
+| |
+| |
+|_|
+(_)";
+        string atMark = @"   ____  
+  / __ \ 
+ / / _` |
+| | (_| |
+ \ \__,_|
+  \____/ ";
+        string sharpMark = @"   _  _   
+ _| || |_ 
+|_  __  _|
+ _| || |_ 
+|_  __  _|
+  |_||_|  ";
+        string dolarMark = @"  _  
+ | | 
+/ __)
+\__ \
+(   /
+ |_| ";
+        string percentMark = @" _   __
+(_) / /
+   / / 
+  / /  
+ / / _ 
+/_/ (_)";
+        string exponentialMark = @" /\ 
+|/\|";
+        string andMark = @"  ___   
+ ( _ )  
+ / _ \/\
+| (_>  <
+ \___/\/";
+        string asteriskMark = @"    _    
+ /\| |/\ 
+ \ ` ' / 
+|_     _|
+ / , . \ 
+ \/|_|\/ ";
+        string parenthesesLeft = @"  __
+ / /
+| | 
+| | 
+| | 
+| | 
+ \_\";
+        string paranthesesRight = @"__  
+\ \ 
+ | |
+ | |
+ | |
+ | |
+/_/ ";
+        string dash = @" ______ 
+|______|";
+        string underscore = @" ______ 
+|______|";
+        string plusMark = @"   _   
+ _| |_ 
+|_   _|
+  |_|  ";
+        string equalMark = @" ______ 
+|______|
+ ______ 
+|______|";
+
+        string squareBracketLeft = @" ___ 
+|  _|
+| |  
+| |  
+| |  
+| |_ 
+|___|";
+        string squareBracketRight = @" ___ 
+|_  |
+  | |
+  | |
+  | |
+ _| |
+|___|";
+        string quote = @" _ 
+( )
+|/ ";
+        string doubleQuote = @" _ _ 
+( | )
+ V V ";
+        string comma = @" _ 
+()
+|/ ";
+        string punctuation = @" _ 
+(_)";
+        string colon = @" _ 
+(_)
+ _ 
+(_)";
+        string semiColon = @" _ 
+(_)
+ _ 
+( )
+|/ ";
+        string questionMark = @" ___  
+|__ \ 
+   ) |
+  / / 
+ |_|  
+ (_)  ";
+        
+        
+
         #endregion
         #region UpperChars
         string upperA = @" ________     
