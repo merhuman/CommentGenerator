@@ -5,27 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommentGenerator"
         mc:Ignorable="d"
-        Title="Comment Generator" Height="450" Width="800">
-    <Grid>
+        Title="Comment Generator" Height="508.666" Width="1011.467">
+    <Grid Margin="0,20,13,13" HorizontalAlignment="Right" Width="969">
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="277*"/>
-            <ColumnDefinition Width="119*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="Btn_Preview" Content="Preview" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" Click="Btn_Preview_Click"/>
-        <Button x:Name="Btn_Copy" Content="Copy" HorizontalAlignment="Left" Margin="19,45,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="20" RenderTransformOrigin="-0.947,-1.7" Click="Btn_Copy_Click"/>
-        <Button x:Name="Btn_Clear" Content="Clear" Grid.Column="1" Margin="19,81,144,0" VerticalAlignment="Top" Height="20" Click="Btn_Clear_Button_Click"/>
-        <Button x:Name="Btn_Test" Content="Test" Grid.Column="1" HorizontalAlignment="Left" Margin="143,45,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Test_Click"/>
-        <TextBox x:Name="Tb_InputBox" Height="180" Margin="10,10,10,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" HorizontalScrollBarVisibility="Visible"
-                 VerticalScrollBarVisibility="Visible" AcceptsReturn="True" FontFamily="Courier New"/>
-        <TextBox x:Name="Tb_OutputBox" Height="180" Margin="10,210,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True"
-                 HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" FontFamily="Courier New"/>
-        <TextBox x:Name="Tb_TypePreview" Grid.Column="1" Height="180" Margin="10,210,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox x:Name="Cb_Type" Grid.Column="1" Margin="19,132,99,0" VerticalAlignment="Top">
-            <ComboBoxItem IsSelected="True" Content="Type1"/>
-            <ComboBoxItem Content="Type2"/>
-            <ComboBoxItem Content="Type3"/>
-        </ComboBox>
-        
+        <TabControl x:Name="tabControl" HorizontalAlignment="Right" Width="960" Margin="0,0,4,0" Height="435" VerticalAlignment="Top">
+            <TabItem Header="Comment">
+                <Grid Background="#FFE5E5E5" Margin="7,1,4,0" Height="403" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="Tb_InputBox" Height="180" Margin="10,10,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" HorizontalScrollBarVisibility="Visible"
+                 VerticalScrollBarVisibility="Visible" AcceptsReturn="True" FontFamily="Courier New" HorizontalAlignment="Left" Width="582" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="Tb_OutputBox" Height="182" Margin="10,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True"
+                 HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" FontFamily="Courier New" HorizontalAlignment="Left" Width="582"/>
+                    <Button x:Name="Btn_Preview" Content="Preview" HorizontalAlignment="Left" Margin="625,47,0,333" Width="75" Click="Btn_Preview_Click" RenderTransformOrigin="-0.453,0.55"/>
+                    <Button x:Name="Btn_Copy1" Content="Button 1&#xD;&#xA;" Margin="789,124,0,259" RenderTransformOrigin="-0.947,-1.7" Click="Btn_Copy_Click" HorizontalAlignment="Left" Width="66"/>
+                    <Button x:Name="Btn_Copy" Content="Copy" HorizontalAlignment="Left" Margin="625,87,0,0" VerticalAlignment="Top" Width="75" Height="20" RenderTransformOrigin="-0.947,-1.7" Click="Btn_Copy_Click"/>
+                    <Button x:Name="Btn_Test" Content="Test" HorizontalAlignment="Left" Margin="625,124,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Test_Click"/>
+                    <Button x:Name="Btn_Clear" Content="Clear" Margin="789,67,0,0" VerticalAlignment="Top" Height="20" Click="Btn_Clear_Button_Click" HorizontalAlignment="Left" Width="60"/>
+                    <TextBox x:Name="Tb_TypePreview" Height="110" Margin="640,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="252"/>
+                    <ComboBox x:Name="Cb_Type" Margin="653,196,0,0" VerticalAlignment="Top" Height="22" HorizontalAlignment="Left" Width="171">
+                        <ComboBoxItem IsSelected="True" Content="Type1"/>
+                        <ComboBoxItem Content="Type2"/>
+                        <ComboBoxItem Content="Type3"/>
+                    </ComboBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ASE Generator">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="83,72,0,0" VerticalAlignment="Top" Height="30" Width="142"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
 
     </Grid>
 </Window>
